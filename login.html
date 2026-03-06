@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Portal de Materiais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #1c1c21 0%, #0a0a0b 100%);
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            padding: 48px 32px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 32px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            background: #1c1c21;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            color: white;
+            transition: var(--transition);
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            outline: none;
+            background: #27272a;
+        }
+
+        .login-footer {
+            margin-top: 24px;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card login-card">
+        <div class="logo heading-font">EDUCATOR PORTAL</div>
+        <h2 style="margin-bottom: 8px;">Bem-vindo(a), Prof.!</h2>
+        <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 32px;">Acesse sua biblioteca exclusiva
+            de materiais.</p>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <p id="errorMsg" style="color: #ff4d4d; font-size: 0.8rem; margin-bottom: 16px; display: none;">E-mail ou
+                senha incorretos. Tente novamente.</p>
+            <button type="submit" class="btn-primary">ENTRAR AGORA</button>
+        </form>
+
+        <div class="login-footer">
+            Problemas com o acesso? <a href="#" style="color: var(--primary);">Falar com Suporte</a>
+        </div>
+    </div>
+
+    <script>
+        const LOGIN_EMAIL = 'acesso@materiais.com'; // Altere aqui
+        const LOGIN_PASS = 'prof123'; // Altere aqui
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const pass = document.getElementById('password').value;
+            const error = document.getElementById('errorMsg');
+
+            if (email === LOGIN_EMAIL && pass === LOGIN_PASS) {
+                window.location.href = 'dashboard.html';
+            } else {
+                error.style.display = 'block';
+                setTimeout(() => error.style.display = 'none', 3000);
+            }
+        });
+    </script>
+</body>
+
+</html>
