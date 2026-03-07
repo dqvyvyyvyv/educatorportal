@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Portal de Materiais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 48px;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 11, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        nav a {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--text-main);
+        }
+
+        .user-profile {
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-card-hover);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .section-title {
+            margin-bottom: 32px;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary);
+            padding-left: 16px;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+
+        .card-image {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: #27272a;
+            position: relative;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            height: 3rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            /* Standard property for compatibility */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .upsell-section {
+            padding: 48px;
+            background: linear-gradient(135deg, #141417 0%, #0a0a0b 100%);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin-bottom: 80px;
+        }
+
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        footer nav {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .placeholder-capa {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cover-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .locked-capa {
+            filter: blur(8px);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo heading-font" style="color: var(--primary); font-size: 1.5rem;">EP</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="#">Meus Materiais</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+            </nav>
+            <div class="flex user-profile">
+                <div style="text-align: right;">
+                    <div style="font-size: 0.875rem; font-weight: 600;">Olá, Prof.!</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Membro Premium</div>
+                </div>
+                <div class="avatar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2 class="section-title">MEUS MATERIAIS</h2>
+            <div class="materials-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://i.imgur.com/b5wIURp.png" alt="1000 Atividades de Ortografia"
+                            class="cover-img">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: rgba(0,0,0,0.6);">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 30%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">1000 Atividades de Ortografia</h3>
+                        <a href="module-ortografia.html" class="btn-primary">ACESSAR AGORA</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://i.imgur.com/Yg0wDHB.png" alt="320 Atividades de Produção de Texto"
+                            class="cover-img">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: rgba(0,0,0,0.6);">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">320 Atividades de Produção de Texto</h3>
+                        <a href="module-producao.html" class="btn-primary">ACESSAR AGORA</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://i.imgur.com/rRc7jVF.png" alt="850 Atividades: Gêneros Textuais"
+                            class="cover-img">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: rgba(0,0,0,0.6);">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 15%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">850 Atividades: Gêneros Textuais</h3>
+                        <a href="module-generos.html" class="btn-primary">ACESSAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">BÔNUS EXCLUSIVOS</h2>
+            <div class="materials-grid">
+                <!-- Bônus 1 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/bonus-01.png" alt="Bônus 01: Checklist de Dificuldades" class="cover-img">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: rgba(0,0,0,0.6);">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">🎁 BÔNUS 01: Checklist de Dificuldades</h3>
+                        <a href="bonus-checklist.html" class="btn-primary">ACESSAR BÔNUS</a>
+                    </div>
+                </div>
+
+                <!-- Bônus 2 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/bonus-02.png" alt="Bônus 02: 50 Ditados Divertidos" class="cover-img">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: rgba(0,0,0,0.6);">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">🎁 BÔNUS 02: 50 Ditados Divertidos</h3>
+                        <a href="bonus-ditados.html" class="btn-primary">ACESSAR BÔNUS</a>
+                    </div>
+                </div>
+
+                <!-- Bônus 3 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/bonus-03.png" alt="Bônus 03: Banco de 100 Palavras" class="cover-img">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: rgba(0,0,0,0.6);">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">🎁 BÔNUS 03: Banco de 100 Palavras</h3>
+                        <a href="bonus-palavras.html" class="btn-primary">ACESSAR BÔNUS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="upsell-section">
+            <h2 class="section-title">EXPANDA SUA BIBLIOTECA</h2>
+            <div style="max-width: 320px; margin: 0 auto; position: relative;">
+                <div class="card">
+                    <div class="card-image locked-capa">
+                        <img src="https://i.imgur.com/iZpB41N.png" alt="Mega Pack Alfabetização Completo"
+                            class="cover-img">
+                    </div>
+                    <div class="lock-overlay">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" />
+                        </svg>
+                    </div>
+                    <div class="card-content" style="text-align: center;">
+                        <h3 class="card-title">Mega Pack Alfabetização Completo</h3>
+                        <a href="https://checkout.simplesdigital.shop/VCCL1O8SCUGG" target="_blank" class="btn-primary"
+                            style="background: white; color: black;">DESBLOQUEAR ACESSO</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Educator Portal. Todos os direitos reservados.</p>
+            <nav>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>
