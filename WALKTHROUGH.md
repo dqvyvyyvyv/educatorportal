@@ -41,3 +41,5 @@ A premium, dark-mode educational member portal designed with a streaming-style i
 1. **Swap Images**: Reemplace as "Capa" placeholders pelas suas artes oficiais.
 2. **Update Links**: Insira os links reais do YouTube e os links de checkout no botão de upsell.
 3. **Deploy**: O portal está pronto para ser hospedado.
+
+</html>

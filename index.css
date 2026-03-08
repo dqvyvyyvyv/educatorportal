@@ -3,12 +3,13 @@
   --bg-dark: #0a0a0b;
   --bg-card: #141417;
   --bg-card-hover: #1c1c21;
-  --primary: #ff7a22; /* Vibrant Orange */
+  --primary: #ff7a22;
+  /* Vibrant Orange */
   --primary-hover: #ff8c42;
   --text-main: #f5f5f7;
   --text-muted: #a1a1aa;
   --border: #27272a;
-  
+
   /* Spacing */
   --radius-lg: 12px;
   --radius-md: 8px;
@@ -29,7 +30,10 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, .heading-font {
+h1,
+h2,
+h3,
+.heading-font {
   font-family: 'Outfit', sans-serif;
   letter-spacing: -0.02em;
 }
@@ -103,7 +107,7 @@ button {
 /* Progress Bar */
 .progress-bar {
   height: 4px;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   overflow: hidden;
   margin-top: 8px;
@@ -112,7 +116,8 @@ button {
 .progress-fill {
   height: 100%;
   background-color: var(--primary);
-  width: 45%; /* Dummy Value */
+  width: 45%;
+  /* Dummy Value */
 }
 
 /* Blurred Section */
