@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium | Mestre da Ortografia 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        :root {
+            --primary-premium: #FF8C00;
+            --primary-premium-dark: #E67E22;
+            --premium-bg: #FFF9F2;
+            --premium-border: #FFEBD6;
+        }
+
+        body {
+            background-color: var(--premium-bg);
+            color: var(--text-main);
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--premium-border);
+            margin-bottom: 48px;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .premium-header-section {
+            text-align: center;
+            margin-bottom: 64px;
+            padding-top: 40px;
+        }
+
+        .premium-title {
+            font-size: 2.5rem;
+            color: var(--primary-premium);
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .premium-description {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 80px;
+        }
+
+        .premium-card {
+            background: white;
+            border: 1px solid var(--premium-border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-premium);
+            box-shadow: 0 20px 40px rgba(255, 140, 0, 0.1);
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-premium);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .premium-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: #FFF5E6;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--primary-premium);
+        }
+
+        .premium-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .premium-card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-premium {
+            background: var(--primary-premium);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-align: center;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .btn-premium:hover {
+            background: var(--primary-premium-dark);
+            transform: scale(1.02);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-premium);
+            border: 1.5px solid var(--primary-premium);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-premium);
+            color: white;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-premium);
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: 0.2s;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+        }
+
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid var(--premium-border);
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .premium-title {
+                font-size: 2rem;
+            }
+
+            .premium-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container flex" style="justify-content: space-between; align-items: center;">
+            <div class="logo heading-font" style="color: var(--primary-premium); font-size: 1.5rem;">EducaPlay</div>
+            <div style="font-size: 0.875rem; color: #666;">Área Premium: Mestre da Ortografia</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="dashboard.html" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Voltar ao Dashboard
+        </a>
+
+        <section class="premium-header-section">
+            <h1 class="premium-title heading-font">Mestre da Ortografia: Planejamento & Avaliações 2026</h1>
+            <p class="premium-description">Tudo o que você precisa para organizar seu ano letivo, aplicar avaliações e
+                garantir a aprendizagem da sua turma.</p>
+        </section>
+
+        <div class="premium-grid">
+            <!-- Card 1 -->
+            <div class="premium-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                </div>
+                <h3>GPS do Planejamento (O Calendário)</h3>
+                <p>Acesse o cronograma interativo mês a mês e baixe a versão para impressão.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn-premium">Acessar Site Interativo</a>
+                    <a href="#" class="btn-premium btn-outline">Baixar Guia PDF</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="premium-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10 9 9 9 8 9" />
+                    </svg>
+                </div>
+                <h3>Avaliações Bimestrais (Editáveis)</h3>
+                <p>Modelos de provas do 1º ao 4º bimestre prontos para editar no Word.</p>
+                <div class="btn-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                    <a href="#" class="btn-premium">1º Bim</a>
+                    <a href="#" class="btn-premium">2º Bim</a>
+                    <a href="#" class="btn-premium">3º Bim</a>
+                    <a href="#" class="btn-premium">4º Bim</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="premium-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <polyline points="9 11 11 13 15 9" />
+                    </svg>
+                </div>
+                <h3>Blindagem Pedagógica (BNCC)</h3>
+                <p>Consulte os códigos de habilidades de cada atividade para seu diário de classe.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn-premium">Ver Tabela Completa</a>
+                    <a href="#" class="btn-premium btn-outline">Baixar PDF BNCC</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="premium-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                        <path d="M4 22h16" />
+                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                    </svg>
+                </div>
+                <h3>Bônus - Área de Recompensas</h3>
+                <p>Materiais para motivar seus alunos e encantar os pais.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn-premium">Baixar Diploma</a>
+                    <a href="#" class="btn-premium btn-outline">Cards Incentivo</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 EducaPlay. Área Premium - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
