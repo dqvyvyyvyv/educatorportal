@@ -92,7 +92,8 @@
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 16px;
-            height: 3rem;
+            line-height: 1.4;
+            min-height: 2.8rem;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             line-clamp: 2;
@@ -146,6 +147,49 @@
         .locked-capa {
             filter: blur(8px);
             opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 0;
+                margin-bottom: 32px;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .user-profile {
+                width: 100%;
+                justify-content: center;
+                margin-top: 8px;
+            }
+            .user-profile > div:first-child {
+                text-align: right !important;
+            }
+            .materials-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin-bottom: 40px;
+            }
+            .card-title {
+                font-size: 1.05rem;
+                min-height: auto;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+            }
+            .upsell-section {
+                padding: 32px 20px;
+                margin-bottom: 48px;
+            }
+            .section-title {
+                font-size: 1.15rem;
+                margin-bottom: 24px;
+            }
         }
     </style>
 </head>
