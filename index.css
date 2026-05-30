@@ -1,44 +1,68 @@
-:root {
-  /* Colors */
-  --bg-dark: #0a0a0b;
-  --bg-card: #141417;
-  --bg-card-hover: #1c1c21;
-  --primary: #ff7a22;
-  /* Vibrant Orange */
-  --primary-hover: #ff8c42;
-  --text-main: #f5f5f7;
-  --text-muted: #a1a1aa;
-  --border: #27272a;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap');
 
-  /* Spacing */
-  --radius-lg: 12px;
-  --radius-md: 8px;
+:root {
+  /* Pastel Palette – inspired by reference image */
+  --bg-main:         #f9f0f5;           /* very light pinkish-white */
+  --bg-card:         #ffffff;
+  --bg-card-hover:   #fef6fb;
+  --primary:         #d4748e;           /* dusty rose / mauve-pink */
+  --primary-light:   #f0a8bb;           /* soft pink */
+  --primary-hover:   #c45e7a;
+  --accent-peach:    #e8a98a;           /* warm peach */
+  --accent-lilac:    #c5afd8;           /* soft lavender/lilac */
+  --accent-blush:    #f2c4ce;           /* light blush */
+  --accent-sand:     #e8d5c0;           /* warm sand/beige */
+  --accent-mint:     #a8d5c2;           /* soft mint green */
+  --text-main:       #5a3d4a;           /* deep mauve for text */
+  --text-muted:      #9b7b89;
+  --border:          #f0d8e4;
+  --border-strong:   #e0b8cc;
+
+  /* Spacing & Radius */
+  --radius-xl:  20px;
+  --radius-lg:  16px;
+  --radius-md:  12px;
+  --radius-sm:  8px;
+  --radius-pill: 999px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-soft: 0 4px 24px rgba(212, 116, 142, 0.12);
+  --shadow-card: 0 2px 16px rgba(180, 100, 130, 0.10);
+  --shadow-hover: 0 8px 32px rgba(212, 116, 142, 0.22);
 }
 
+/* ────────────────────── RESET ────────────────────── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
 
 body {
-  background-color: var(--bg-dark);
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--bg-main);
   color: var(--text-main);
   line-height: 1.5;
   overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-.heading-font {
-  font-family: 'Outfit', sans-serif;
-  letter-spacing: -0.02em;
+/* Subtle dot pattern on body */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(212,116,142,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Base Styles */
+h1, h2, h3, .heading-font {
+  font-family: 'Fredoka One', sans-serif;
+  letter-spacing: 0.01em;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -52,77 +76,77 @@ button {
   transition: var(--transition);
 }
 
-/* Layout Utilities */
+/* ────────────────────── LAYOUT ────────────────────── */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  position: relative;
+  z-index: 1;
 }
 
-.grid {
-  display: grid;
-  gap: 24px;
-}
+.grid  { display: grid;  gap: 24px; }
+.flex  { display: flex;  align-items: center; }
 
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-/* Custom Components */
+/* ────────────────────── BUTTONS ────────────────────── */
 .btn-primary {
-  background-color: var(--primary);
-  color: white;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
   padding: 12px 24px;
-  border-radius: var(--radius-md);
-  font-weight: 600;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  box-shadow: 0 4px 14px rgba(212, 116, 142, 0.35);
+  font-family: 'Nunito', sans-serif;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(255, 122, 34, 0.3);
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(212, 116, 142, 0.4);
 }
 
+/* ────────────────────── CARDS ────────────────────── */
 .card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   transition: var(--transition);
+  box-shadow: var(--shadow-card);
 }
 
 .card:hover {
-  background-color: var(--bg-card-hover);
-  border-color: var(--primary);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
 }
 
-/* Progress Bar */
+/* ────────────────────── PROGRESS BAR ────────────────────── */
 .progress-bar {
-  height: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
+  height: 6px;
+  background: rgba(255,255,255,0.3);
+  border-radius: var(--radius-pill);
   overflow: hidden;
   margin-top: 8px;
 }
 
 .progress-fill {
   height: 100%;
-  background-color: var(--primary);
+  background: linear-gradient(90deg, var(--accent-mint), #7fcbb5);
+  border-radius: var(--radius-pill);
   width: 45%;
-  /* Dummy Value */
 }
 
-/* Blurred Section */
+/* ────────────────────── LOCKED / UPSELL ────────────────────── */
 .locked-capa {
-  filter: blur(8px) brightness(0.4);
+  filter: blur(8px) brightness(0.85);
   pointer-events: none;
 }
 
